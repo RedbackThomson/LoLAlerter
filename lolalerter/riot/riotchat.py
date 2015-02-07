@@ -78,7 +78,7 @@ class RiotChat(ClientXMPP):
 		Disconnects the bot from the chat servers and stops processing messages
 		'''
 		self.alive = False
-		self.disconnect(wait=True)
+		self.disconnect(wait=False)
 
 	def session_start(self, event):
 		'''

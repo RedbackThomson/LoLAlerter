@@ -2,3 +2,4 @@ peewee>=2.4.6
 sleekxmpp>=1.31
 redis>=2.10.3
 irc>=11.0.1
+pymysql>=0.6.3
