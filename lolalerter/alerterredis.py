@@ -6,6 +6,7 @@
 
 import redis
 
+
 class AlerterRedis(object):
 	'''
 	The redis class handles the custom connection to the redis database for

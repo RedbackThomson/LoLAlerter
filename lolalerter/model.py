@@ -5,7 +5,9 @@
 '''
 
 from peewee import *  # @UnusedWildImport
+
 from settings import Settings
+
 
 class UnknownField(object):
     pass

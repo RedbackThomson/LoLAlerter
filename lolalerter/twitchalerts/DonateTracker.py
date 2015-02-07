@@ -4,13 +4,15 @@
 	This file is part of LoLAlerter
 '''
 
-import time
-import threading
 import json
+import threading
+import time
 import urllib.error
-from logger import Logger
+
 from alerterredis import AlerterRedis
+from logger import Logger
 import constants as Constants
+
 
 class DonateTracker(object):
 	'''

@@ -6,8 +6,9 @@
 
 import time
 
-from model import Alerter
 from actives import ActiveAlerter
+from model import Alerter
+
 
 class DBTracker(object):
 	'''

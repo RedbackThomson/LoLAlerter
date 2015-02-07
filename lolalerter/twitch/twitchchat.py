@@ -5,12 +5,13 @@
 '''
 
 from threading import Thread
-import time
 
 from irc.bot import ServerSpec, SingleServerIRCBot
+
 from logger import Logger
 from model import *
 import constants as Constants
+
 
 class TwitchChat(SingleServerIRCBot):
 	'''

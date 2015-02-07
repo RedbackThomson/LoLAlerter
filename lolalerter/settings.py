@@ -5,6 +5,8 @@
 '''
 
 import json
+import os
+
 
 class Settings(object):
 	'''
@@ -42,4 +44,4 @@ class Settings(object):
 		'''
 		return json.loads(open(cls.path, 'r').read())
 	
-Settings.set_path('../lolalerter.conf')
+Settings.set_path(os.path.join(os.path.dirname(__file__), "../lolalerter.conf"))

@@ -6,6 +6,8 @@
 
 import logging.config
 
+import os
+
 class Logger(object):
 	'''
 	The logger takes care of all of the logging setup. It can be easily
@@ -16,7 +18,8 @@ class Logger(object):
 		'''
 		Constructor
 		'''
-		logging.config.fileConfig("../logging.conf")
+		logging.config.fileConfig(os.path.join(os.path.dirname(__file__), 
+			"../logging.conf"))
 		self.log = logging.getLogger()
 		
 	def get(self):

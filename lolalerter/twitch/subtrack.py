@@ -4,17 +4,20 @@
 	This file is part of LoLAlerter
 '''
 
-import time
-import threading
-import json
-import urllib.error
-from urllib.request import urlopen
-from logger import Logger
-from alerterredis import AlerterRedis
-from model import User, ActiveUser
-from model import Subscriber as SubModel
 from datetime import datetime
+from queue import Queue
+from urllib.request import urlopen
+import json
+import threading
+import time
+import urllib.error
+
+from alerterredis import AlerterRedis
+from logger import Logger
+from model import Subscriber as SubModel
+from model import User, ActiveUser
 import constants as Constants
+
 
 class SubTracker(object):
 	'''
@@ -125,7 +128,6 @@ class SubTracker(object):
 		
 		return new_sub
 		
-from queue import Queue
 		
 class UnsubTracker(object):
 	'''

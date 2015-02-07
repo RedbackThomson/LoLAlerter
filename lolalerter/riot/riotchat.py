@@ -11,8 +11,8 @@ from sleekxmpp.exceptions import IqError, IqTimeout
 
 from logger import Logger
 from model import *
-
 import constants as Constants
+
 
 class RiotChat(ClientXMPP):
 	'''

@@ -5,12 +5,12 @@
 '''
 
 from alerterredis import AlerterRedis
-from logger import Logger
 from dbtrack import DBTracker
-import model
+from logger import Logger
 from settings import Settings
 from twitch.subtrack import UnsubTracker
 from twitch.twitchchat import TwitchChat
+
 
 class LoLAlerter(object):
 	def __init__(self):

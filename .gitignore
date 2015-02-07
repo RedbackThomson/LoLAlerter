@@ -16,3 +16,4 @@ __pycache__
 logs/*
 prod.conf
 lolalerter.conf
+*.pyc

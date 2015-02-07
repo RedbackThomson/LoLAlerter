@@ -6,11 +6,14 @@
 
 import re
 
+from alerterredis import AlerterRedis
 from logger import Logger
 from model import *  # @UnusedWildImport
 from riot.riotchat import RiotChat
-from alerterredis import AlerterRedis
+from twitch.subtrack import SubTracker
+from twitchalerts.DonateTracker import DonateTracker
 import constants as Constants
+
 
 class ActiveAlerter(object):
 	'''
@@ -321,8 +324,6 @@ class ActiveAlerter(object):
 		'''
 		return [x.summoner.user.twitchusername for x in self.users]
 			
-from twitch.subtrack import SubTracker
-from twitchalerts.DonateTracker import DonateTracker
 	
 class ActiveUser(object):
 	'''
