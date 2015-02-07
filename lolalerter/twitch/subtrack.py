@@ -256,7 +256,7 @@ class Subscriber(object):
 		
 		except urllib.error.URLError as e:
 			tracker.refresh_token()
-			Logger().get().exception(e)
+			Logger().get().error(e)
 			return []
 		
 	@staticmethod
