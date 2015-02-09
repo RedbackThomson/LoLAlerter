@@ -45,6 +45,15 @@ class AlerterRedis(object):
 		'''
 		self.r.sadd('subscribers:'+user.apikey, subscriber)
 
+	def del_subscriber(self, user, subscriber):
+		'''
+		Deletes a new subscriber to a user's set
+		
+		:param user: The user associated with the subscriber
+		:param subscriber: The username of the subscriber
+		'''
+		self.r.srem('subscribers:'+user.apikey, subscriber)
+
 	def has_subscriber(self, user, subscriber):
 		'''
 		Returns whether the user already has that subscriber

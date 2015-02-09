@@ -239,7 +239,11 @@ class ActiveAlerter(object):
 		:param subscriber: The new subscriber's username
 		:param resub: A boolean of whether the user has already subscribed
 		'''
-		#TODO: Add database statistics
+		AlerterStatistic.update(totalsubscribed=
+			AlerterStatistic.totalsubscribed+1)\
+			.where(AlerterStatistic.alerter==self.model)\
+			.execute()
+			
 		try:
 			messages = Message.get(Message.user == summoner.user)
 			ingame = messages.ingame
@@ -371,6 +375,9 @@ class ActiveUser(object):
 		'''
 		Logger().get().info("New Subscriber ({}) for {}({})".format(username, 
 			self.user.twitchusername, self.summoner.summonerid))
+		
+		UserStatistic.update(totalsubscribed=UserStatistic.totalsubscribed+1)\
+			.where(UserStatistic.user==self.user).execute()
 		
 		self.active_alerter.new_subscriber(self.summoner, username, resub)
 		

@@ -66,7 +66,6 @@ class DonateTracker(object):
 				
 				if (not redis.has_donation(self.user, donate_id)):
 					redis.new_donation(self.user, donate_id)
-					#TODO: Put in database insert
 					if(self.user.minimumdonation != None and 
 						float(new['amount']) < self.user.minimumdonation):
 						continue

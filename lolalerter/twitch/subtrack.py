@@ -158,7 +158,7 @@ class UnsubTracker(object):
 		'''
 		first = True
 		
-		# time.sleep(10)
+		time.sleep(10)
 		
 		while(self.alive):
 			Logger().get().info('Unsub Tracker Starting')
@@ -215,9 +215,15 @@ class UnsubTracker(object):
 			new_sub.active = 1
 			new_sub.save()			
 		
+		redis = AlerterRedis()
+		
 		if un_subs:
 			SubModel.update(active=False, unsubdate=datetime.now())\
-				.where(SubModel.twitchid << un_subs, SubModel.user == user).execute()
+				.where(SubModel.twitchid << un_subs, SubModel.user == user)\
+				.execute()
+			for unsub_user in SubModel.select(SubModel.username)\
+				.where(SubModel.twitchid << un_subs, SubModel.user == user): 
+				redis.del_subscriber(user, unsub_user.username)
 				
 		stats = (len(new_subs), len(un_subs))
 		
