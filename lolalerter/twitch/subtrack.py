@@ -28,6 +28,7 @@ class SubTracker(object):
 	def __init__(self, active_user):
 		'''
 		Constructor
+		
 		:param user: The associated database user model associated
 		'''
 		self.active_user = active_user

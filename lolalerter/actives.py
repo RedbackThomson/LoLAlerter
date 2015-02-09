@@ -155,11 +155,15 @@ class ActiveAlerter(object):
 		
 		:param summoner: The summoner to check for
 		'''
-		last = summoner.user.lastnotice.id
-		
-		for newer in Notice.select().where(Notice.id > last):
-			self.chat.new_message(summoner.summonerid, 
-				'[NOTICE] {}'.format(newer.message))
+		if (summoner.user.lastnotice == None):
+			newer = Notice.select().order_by(Notice.id.desc())\
+				.get()
+		else:
+			last = summoner.user.lastnotice.id
+			
+			for newer in Notice.select().where(Notice.id > last):
+				self.chat.new_message(summoner.summonerid, 
+					'[NOTICE] {}'.format(newer.message))
 			
 		try:
 			# Modify latest notice in db
