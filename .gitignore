@@ -15,5 +15,4 @@ local.properties
 __pycache__
 logs/*
 prod.conf
-lolalerter.conf
 *.pyc
