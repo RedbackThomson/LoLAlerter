@@ -1,6 +1,7 @@
 # LoLAlerter
 An open-source version of the LoLAlerter client - http://lolalerter.com/
-The web-interface has been open-sourced to (here)[https://github.com/RedbackThomson/LoLAlerter-web]
+
+The web-interface has been open-sourced to [here](https://github.com/RedbackThomson/LoLAlerter-web)
 
 ## Requirements
 - Python >= 3.4
